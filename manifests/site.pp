@@ -45,3 +45,8 @@ node default {
   # notify { "Hello, my name is ${::hostname}": }
   notify { "Hello, from Github": }
 }
+file {'/etc/motd':
+  ensure => present,
+  path => "/etc/motd",
+  content => "Welcome to GitHub pushed content"
+}
