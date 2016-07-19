@@ -46,7 +46,9 @@ node default {
   notify { "Hello, from Github": }
 }
 file {'/etc/motd':
-  ensure => present,
-  path => "/etc/motd",
-  content => "Welcome to GitHub pushed content"
+  ensure => file,
+  owner => 'root',
+  group => 'root',
+  mode => '0644',
+  content => "Welcome to GitHub pushed content",
 }
