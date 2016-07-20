@@ -38,7 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 node 'tung0.puppetlabs.vm' {
-  notify {'you have a node defined'}
+  notify {"you have a node defined":}
 }
 node default {
  include users
