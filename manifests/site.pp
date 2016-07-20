@@ -58,6 +58,6 @@ file {'/etc/motd':
 #  comment => "test entry"
 #}
 exec { '/etc/motd':
-  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
-  path => "/usr/local/bin/",
-  }
+  path => '/usr/local/bin/',
+  command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+}
