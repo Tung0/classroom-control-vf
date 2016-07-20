@@ -37,7 +37,9 @@ ini_setting { 'random ordering':
 # definition. If there are no other nodes in this file, classes declared here
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
-
+node 'tung0.puppetlabs.vm' {
+  notify {'you have a node defined'}
+}
 node default {
  include users
   # This is where you can declare classes for all nodes.
