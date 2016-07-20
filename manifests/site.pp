@@ -52,3 +52,9 @@ file {'/etc/motd':
   mode => '0644',
   content => "Welcome to GitHub pushed content",
 }
+host { 'testing.puppetlabs.com':
+  name => 'testing.puppetlabs.com',
+  ip => '127.0.0.1',
+  comment => "test entry"
+}
+  
