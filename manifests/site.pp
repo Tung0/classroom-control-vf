@@ -65,4 +65,9 @@ node 'tung0.puppetlabs.vm' {
     path => '/usr/local/bin/',
     command => "/usr/local/bin/cowsay 'tung0 node motd ${::fqdn}!' > /etc/motd",
   }
+  if is_virtual {
+   case $::virtual{
+     'docker': { $vm_type = capitalize($::virtual); Notify{"The type is $vm_type":}}
+   }
+  }
 }
