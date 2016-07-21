@@ -60,6 +60,7 @@ node default {
 #}
 node 'tung0.puppetlabs.vm' {
   include memcached
+  include users
   include nginx
   exec { '/etc/motd':
     path => '/usr/local/bin/',
