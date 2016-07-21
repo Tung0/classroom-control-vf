@@ -37,10 +37,7 @@ ini_setting { 'random ordering':
 # definition. If there are no other nodes in this file, classes declared here
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
-node 'tung0.puppetlabs.vm' {
-  notify {"Tung0 Defined Node!":}
-  include memcached
-}
+
 node default {
  include users
   # This is where you can declare classes for all nodes.
@@ -49,19 +46,23 @@ node default {
   # notify { "Hello, my name is ${::hostname}": }
   notify { "Hello, from Github": }
 }
-file {'/etc/motd':
-  ensure => file,
-  owner => 'root',
-  group => 'root',
-  mode => '0644',
-  content => "Welcome to GitHub pushed content",
-}
+#file {'/etc/motd':
+#  ensure => file,
+#  owner => 'root',
+#  group => 'root',
+#  mode => '0644',
+#  content => "Welcome to GitHub pushed content",
+# }
 #host { 'testing.puppetlabs.com':
 #  name => 'testing.puppetlabs.com',
 #  ip => '127.0.0.1',
 #  comment => "test entry"
 #}
-exec { '/etc/motd':
-  path => '/usr/local/bin/',
-  command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+node 'tung0.puppetlabs.vm' {
+  include memcached
+  include nginx
+  exec { '/etc/motd':
+    path => '/usr/local/bin/',
+    command => "/usr/local/bin/cowsay 'tung0 node motd ${::fqdn}!' > /etc/motd",
+  }
 }
