@@ -39,7 +39,7 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 node 'tung0.puppetlabs.vm' {
   notify {"Tung0 Defined Node!":}
-  include memcachesvc
+  include memcached
 }
 node default {
  include users
