@@ -1,13 +1,13 @@
 define users::managed_user(
-  $group = $title
+  $group = $title,
   ){
     user { $title:
       ensure => present,
     }
-    file { '/home/$title':
+    file { "/home/${title}":
       ensure => directory,
       group  => $group,
-      user   => $title,
+      owner  => $title,
     }
 }
       
