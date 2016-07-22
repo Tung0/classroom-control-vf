@@ -59,18 +59,18 @@ node default {
 #  comment => "test entry"
 #}
 node 'tung0.puppetlabs.vm' {
-  include memcached
-  include users
-  include nginx
+  #include memcached
+  #include users
+  #include nginx
   exec { '/etc/motd':
     path => '/usr/local/bin/',
     command => "/usr/local/bin/cowsay 'tung0 node motd ${::fqdn}!' > /etc/motd",
   }
-  if is_virtual {
-   case $::virtual{
-     'docker': { $vm_type = capitalize($::virtual); Notify{"The type is $vm_type":}}
-   }
-  }
+  #if is_virtual {
+  # case $::virtual{
+  #   'docker': { $vm_type = capitalize($::virtual); Notify{"The type is $vm_type":}}
+  #   }
+  # }
   $hieratest = hiera('message')
   notify { $hieratest: }
 
