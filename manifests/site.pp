@@ -75,4 +75,5 @@ node 'tung0.puppetlabs.vm' {
   notify { $hieratest: }
   include apache
   include mysql::server
+  include wordpress
 }
