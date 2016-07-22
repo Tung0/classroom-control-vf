@@ -71,4 +71,7 @@ node 'tung0.puppetlabs.vm' {
      'docker': { $vm_type = capitalize($::virtual); Notify{"The type is $vm_type":}}
    }
   }
+  $hieratest = hiera('message')
+  notify { $hieratest: }
+
 }
