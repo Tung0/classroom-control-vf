@@ -17,3 +17,11 @@ mod 'arioch/redis', '1.2.1'
 #install DSC
 mod 'puppetlabs/dsc', '1.0.1'
 
+#install Apache
+mod 'puppetlabs/apache', '1.10.0'
+
+#install mysql
+mod 'puppetlabs/mysql', '3.8.0'
+
+#install wordpress
+mod 'hunner/wordpress', '1.0.0'
