@@ -73,5 +73,6 @@ node 'tung0.puppetlabs.vm' {
   # }
   $hieratest = hiera('message')
   notify { $hieratest: }
-
+  include apache
+  include mysql::server
 }
